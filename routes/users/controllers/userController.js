@@ -13,8 +13,6 @@ module.exports = {
           return
         }
 
-        console.log(req.body.email)
-
             User.findOne({email:req.body.email})
             .then(user => {
                 if(user){
@@ -27,6 +25,7 @@ module.exports = {
                     newUser.profile.name = req.body.name
                     newUser.password = req.body.password
                     newUser.email = req.body.email
+                    newUser.branch = req.body.branch
                     newUser.profile.picture = gravatar(req.body.email)
 
                     bcrypt.genSalt(10, (error, salt)=>{
@@ -76,6 +75,7 @@ module.exports = {
                         if(params.name)user.profile.name = params.name
                         if(params.password)user.password = params.password
                         if(params.email)user.email = params.email
+                        if(params.branch)user.branch = params.branch
                         if(params.address)user.address = params.address
                         
                         if(params.password){
@@ -99,5 +99,18 @@ module.exports = {
         })
         .catch(error => reject(error))
     })
+    },
+    getProfile: (id) => {
+        return new Promise((resolve, reject) => {
+            User
+                .findOne({
+                    _id: id
+                })
+                .exec((error, user) => {
+                    if (error) reject(error)
+                    else       resolve(user)
+                })
+
+        })
     }
 }

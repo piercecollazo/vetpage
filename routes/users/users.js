@@ -41,9 +41,9 @@ router.get('/logout', (req, res, next)=>{
 })
 
 router.get('/profile', (req, res, next)=>{
-  userController.getProfileWithHistory(req.user._id)
+  userController.getProfile(req.user._id)
   .then( user => {
-      res.render('account/profile', {
+      res.render('users/profile', {
           errors:  req.flash('errors'),
           success: req.flash('success'),
           user:    user

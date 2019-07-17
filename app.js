@@ -24,6 +24,8 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users/users');
 
+let Category = require('./routes/admin/models/Category.js')
+
 var app = express();
 
 // view engine setup
@@ -97,7 +99,7 @@ app.use(expressValidator({
 
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

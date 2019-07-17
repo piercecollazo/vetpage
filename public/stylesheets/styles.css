@@ -1,0 +1,13 @@
+body{
+    background: -webkit-linear-gradient(left, #60b9ed, #76dcf9);
+    padding: 50px;
+}
+
+.images{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#search{
+    width: 100%;
+}
