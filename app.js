@@ -3,9 +3,26 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose')
+const expressValidator = require('express-validator')
+const session = require('express-session')
+const flash = require('connect-flash')
+const passport = require('passport')
+let methodOverride = require('method-override')
+require('dotenv').config()
+let MongoStore = require('connect-mongo')(session)
+
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+  .then( ()=>{
+    console.log('MongoDB connected!')
+  })
+  .catch((error)=>{
+    console.log(`MongoDB connection error: ${error}`)
+  })
+
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users/users');
 
 var app = express();
 
@@ -18,6 +35,66 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
+
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: process.env.SESSION_SECRET,
+  store: new MongoStore({url: process.env.MONGODB_URI, autoReconnect: true}),
+  cookie:{
+    secure: false,
+    maxAge: process.env.COOKIE_LENGTH
+  }
+}))
+
+app.use(flash())
+
+app.use(passport.initialize())
+app.use(passport.session())
+
+require('./lib/passport/passport')(passport)
+
+app.use(function (req, res, next){
+res.locals.user = req.user
+
+res.locals.error = req.flash('error')
+res.locals.error_msg = req.flash('error_msg')
+res.locals.error = req.flash('error')
+
+next()
+})
+
+app.use((req, res, next)=>{
+Category.find({})
+  .then(categories =>{
+    res.locals.categories = categories
+
+    next()
+  })
+  .catch(error => {
+    return next(error)
+  })
+})
+
+app.use(expressValidator({
+  errorFormatter: (param,message,value)=>{
+    let namespace = param.split('.')
+    let root = namespace.shift()
+    let formParam = root
+
+    while(namespace.length){
+      formParam += '[' + namespace.shift() + ']'
+    }
+
+    return {
+      param: formParam,
+      message: message,
+      value: value
+    }
+  }
+}))
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
