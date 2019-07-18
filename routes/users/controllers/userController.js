@@ -2,6 +2,7 @@ const User = require('../models/User')
 const bcrypt = require('bcryptjs')
 const gravatar = require('../utils/gravatar')
 const passport = require('passport')
+let checklistController = require('./checklistController')
 
 module.exports = {
     signup: (req, res, next)=>{
@@ -25,7 +26,7 @@ module.exports = {
                     newUser.profile.name = req.body.name
                     newUser.password = req.body.password
                     newUser.email = req.body.email
-                    newUser.branch = req.body.branch
+                    newUser.profile.branch = req.body.branch
                     newUser.profile.picture = gravatar(req.body.email)
 
                     bcrypt.genSalt(10, (error, salt)=>{
@@ -45,6 +46,7 @@ module.exports = {
                                                         message: error
                                                     })
                                                 } else {
+                                                    
                                                     next()
                                                 }
                                             })
