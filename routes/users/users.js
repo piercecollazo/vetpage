@@ -64,4 +64,21 @@ router.post('/profile', (req, res, next)=>{
     })
 })
 
+// survey pages
+router.get('/survey', (req, res, next)=>{
+  res.render('checklist/surveyIntro')
+})
+
+router.get('/survey/ets', (req,res,next)=>{
+  
+})
+
+router.get('/survey/school', (req,res,next)=>{
+
+})
+
+router.get('/survey/housing', (req,res,next)=>{
+  
+})
+
 module.exports = router;
