@@ -70,15 +70,15 @@ router.get('/survey', (req, res, next)=>{
 })
 
 router.get('/survey/ets', (req,res,next)=>{
-  
+  res.render('checklist/ets')
 })
 
 router.get('/survey/school', (req,res,next)=>{
-
+  res.render('checklist/school')
 })
 
 router.get('/survey/housing', (req,res,next)=>{
-  
+  res.render('checklist/checkHome')
 })
 
 module.exports = router;

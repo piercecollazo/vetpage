@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <% include ../partials/head %>
+<script src="/javascripts/checkProfile.js"></script>
   <body>
     <% include ../partials/nav %>
     <div class="container emp-profile">
@@ -92,9 +93,20 @@
                                                 </div>
                                             </div>
                             </div>
+                            <!-- edit profile tab -->
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                       <% include ./edit-profile %>
                             </div>
+
+                            <!-- checklist tab -->
+                            <div class="tab-pane fade" id="checklist" role="tabpanel" aria-labelledby="checklist-tab">
+                                    <% include ./checklist %>
+                            </div>
+
+                          <!-- calendar tab -->
+                          <div class="tab-pane fade" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
+                                <% include ./calendar %>
+                          </div>
                         </div>
                     </div>
                 </div>
