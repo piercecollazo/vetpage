@@ -3,37 +3,50 @@
     <% include ../partials/head %>
     <body>
         <% include ../partials/nav %>
-        <div class="jumbotron">
-            <div class="container">
-                <h1>Welcome to your checklist!</h1>
-                <p>Welcome to the beginning of your transitionary journey! Here we can go step by step with you to chart out a plan of attack towards reintegration. From ETS to schooling, and even home ownership, No plan can go into action without organization. From here on, we can go over a multitude of options and how to best pursue them, and Vetpage will help you stay on track with updates and notifications; Keeping you are your mentors in the know so that you never miss an appointment or an opportunity.</p>
-                <p><a class="btn btn-primary btn-lg" href="api/users/survey/ETS" role="button">Get Started &raquo;</a></p>
-            </div>
-        </div>
-
         <div class="container">
-                <!-- Example row of columns -->
-                <div class="row">
-                  <div class="col-md-4">
-                    <h2>Choosing a school</h2>
-                    <p>Choosing a school is no easy task, but we've gathered resources that can help! Whether you're working with a mentor, or researching on your own, examine colleges and trade schools in your area that accept the 9/11 GI bill.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                  </div>
-                  <div class="col-md-4">
-                    <h2>Understand your benefits</h2>
-                    <p>From education to health, housing, and beyond; Here you can dive into the resources in place from federal and local institutions to benefit veterans!</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                  </div>
-                  <div class="col-md-4">
-                    <h2>Need help?</h2>
-                    <p>Have a question or in need of other support? Interested in pursuing an experienced mentor for help in quickly getting your plans set in motion? Check out our FAQ or community forum!</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                  </div>
-                </div>
-            
-                <hr>
-            
-              </div>
+          <h1>Leaving the service</h1>
+          <p>It’s never too early to begin preparations for your separation from active military service. The Department of Defense (DoD) recommends that you start your planning at least 12 months prior to separation, and 24 months prior to retirement, from active duty. The DoD’s Transition Assistance Program (TAP) is is a vital resource to ensure that your separation/retirement choices are truly in your, and your family’s, best interests. Transition counselors and online tools provide special transition benefits information, employment workshops, automated employment job-hunting tools and job banks, veteran benefits information, disabled veterans benefits information, and many other types of transition and other related information.</p>
+          <br>
+          <h5>The Transition Assistance Program</h5>
+          <p>The Transition Assistance Program (TAP) for the active component service consists of the following:
+
+              Mandatory pre-separation counseling. Department of Labor (DOL) TAP employment workshops.
+              Veterans benefits briefings conducted by the Department of Veterans Affairs (VA).
+              Disabled Transition Assistance Program (DTAP), which is also facilitated by the VA and is designed to focus on the special needs of disabled service members.
+              The transition process begins with the completion of the DD Form 2648 (“Pre-separation Counseling Checklist”). The checklist allows you to indicate the benefits and services that you wish to receive additional counseling for. All separating and retiring service members should make an appointment to see their local transition counselor for information on transition services and benefits. Transition counselors are located in the following military installation offices:</p>
+
+          <b>Army:</b><span>Army Career and Alumni Program (ACAP). See <a href="https://www.acap.army.mil/">www.acap.army.mil/</a></span>
+          <br>
+          <b>Navy:</b><span>Airman and Family Readiness Center. See <a href="https://www.militaryinstallations.dod.mil">www.militaryinstallations.dod.mil</a></span>
+          <br>
+          <b>Air Force:</b><span>Fleet and Family Support Center. Navy personnel should make an appointment with their command career counselor for a pre-separation counseling interview at least 180 days prior to separation. See <a href="https://www.nffsp.org/">https://www.nffsp.org/</a></span>
+          <br>
+          <b>Marines:</b><span>Career Resource Management Center (CRMC)/Transition & Employment Assistance Program Center.
+              See <a href="https://www.usmc-mccs.org/tamp/index.cfm">www.usmc-mccs.org/tamp/index.cfm</a></span>
+          <br>
+          <b>Coast Guard:</b><span>Worklife Division––Coast Guard Worklife staff can be found at the nearest Integrated Support Command.</span>
+          <br>
+          <br>
+          <h4>Important tasks</h4>
+            <p>While the TAP will guide you through the myriad of tasks necessary to ETS, it is <b>important</b> that you take the time and effort to get your records in order. Especially in regards to health and dental records; Having the right paperwork in order can save you years of grief after your time in the service as you seek out VA support and benefits.</p>
+
+            <p>While you may get 'friendly' reminders from those in your unit to adhere to stay on top of appointments, you're ultimately responsible for attending your check out sessions. With vetpage, we can help you stay on top of the chaos with email and push notifications so that you never miss an appointment, and can work with your leadership to have the time away from your normal duties necessary to complete your transition tasks.</p>
+        </div>
+        <hr>
+        <div class="container">
+          <form>
+              <label for="etsDate" class="sr-only">Date of ETS</label>
+              <input type="text" id="etsDate" class="form-control" placeholder="etsDate" value="Date of ETS" name="etsDate">
+              <br>
+              <label for="healthDate" class="sr-only">Date of health checkout</label>
+              <input type="text" id="healthDate" class="form-control" placeholder="healthDate" value="Date of health checkout" name="healthDate">
+              <br>
+              <label for="dentalDate" class="sr-only">Date of dental checkout</label>
+              <input type="text" id="dentalDate" class="form-control" placeholder="etsDate" value="Date of dental checkout" name="dentalDate">
+              <br>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Update Checklist</button>
+          </form>
+        </div>
 
         <% include ../partials/footer %>
     </body>

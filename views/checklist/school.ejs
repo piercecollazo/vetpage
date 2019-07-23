@@ -3,37 +3,36 @@
     <% include ../partials/head %>
     <body>
         <% include ../partials/nav %>
-        <div class="jumbotron">
             <div class="container">
-                <h1>Welcome to your checklist!</h1>
-                <p>Welcome to the beginning of your transitionary journey! Here we can go step by step with you to chart out a plan of attack towards reintegration. From ETS to schooling, and even home ownership, No plan can go into action without organization. From here on, we can go over a multitude of options and how to best pursue them, and Vetpage will help you stay on track with updates and notifications; Keeping you are your mentors in the know so that you never miss an appointment or an opportunity.</p>
-                <p><a class="btn btn-primary btn-lg" href="api/users/survey/ETS" role="button">Get Started &raquo;</a></p>
-            </div>
-        </div>
+                <h1>Getting an education</h1>
+                <p>It's no secret in this day and age that the path to gainful employment is most often through higher education. Whether it be a university or a trade school, Veterans and civilians alike are finding the necessity of gaining job skills all the more pressing for a stable, comfortable income. Thankfully, while the costs of tuition in many institutions has risen tremendously over the years, access to education, both from traditional and alternative means, is easier than ever. Veterans also enjoy a unique opportunity to use programs like the 9/11 or Montgomery GI bill to go to school without the burdens of debt. Furthermore, many programs exist to offer scholarships and grants to veterans seeking higher education and a transition to a new career out of uniform.</p>
 
+                <h3>Programs to consider:</h3>
+                <a target="_blank" href="https://operationcode.org/"><img src="/images/operation code.png"></a>
+                <br>
+                <a target="_blank" href="https://www.va.gov/education/"><img src="/images/va logo.png"></a>
+                <br>
+                <a target="_blank" href="https://www.benefits.va.gov/gibill/yellow_ribbon.asp"><img src="/images/yellow ribbon.png"></a>
+                <p></p>
+            </div>
+            <hr>
         <div class="container">
-                <!-- Example row of columns -->
-                <div class="row">
-                  <div class="col-md-4">
-                    <h2>Choosing a school</h2>
-                    <p>Choosing a school is no easy task, but we've gathered resources that can help! Whether you're working with a mentor, or researching on your own, examine colleges and trade schools in your area that accept the 9/11 GI bill.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                  </div>
-                  <div class="col-md-4">
-                    <h2>Understand your benefits</h2>
-                    <p>From education to health, housing, and beyond; Here you can dive into the resources in place from federal and local institutions to benefit veterans!</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                  </div>
-                  <div class="col-md-4">
-                    <h2>Need help?</h2>
-                    <p>Have a question or in need of other support? Interested in pursuing an experienced mentor for help in quickly getting your plans set in motion? Check out our FAQ or community forum!</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                  </div>
-                </div>
-            
-                <hr>
-            
-              </div>
+          <form>
+              <label for="schoolName" class="sr-only">Date of ETS</label>
+              <input type="text" id="schoolName" class="form-control" placeholder="schoolName" value="School" name="schoolName">
+              <br>
+              <label for="schoolGrant" class="sr-only">School grants/scholarships(Separate by Comma)</label>
+              <input type="text" id="schoolGrant" class="form-control" placeholder="schoolGrant" value="School grants/scholarships(Separate by Comma)" name="schoolGrant">
+              <br>
+              <label for="schoolBill" class="sr-only">GI bill</label>
+              <input type="text" id="schoolBill" class="form-control" placeholder="schoolBill" value="GI bill" name="schoolBill">
+              <br>
+              <label for="schoolDate" class="sr-only">Date of attendance</label>
+              <input type="text" id="schoolDate" class="form-control" placeholder="schoolDate" value="Date of School attendance" name="schoolDate">
+              <br>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Update Checklist</button>
+          </form>
+        </div>
 
         <% include ../partials/footer %>
     </body>

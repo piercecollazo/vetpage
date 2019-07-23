@@ -81,4 +81,8 @@ router.get('/survey/housing', (req,res,next)=>{
   res.render('checklist/checkHome')
 })
 
+router.get('/survey/counseling', (req,res,next)=>{
+  res.render('checklist/counseling')
+})
+
 module.exports = router;

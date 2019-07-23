@@ -3,37 +3,35 @@
     <% include ../partials/head %>
     <body>
         <% include ../partials/nav %>
-        <div class="jumbotron">
             <div class="container">
-                <h1>Welcome to your checklist!</h1>
-                <p>Welcome to the beginning of your transitionary journey! Here we can go step by step with you to chart out a plan of attack towards reintegration. From ETS to schooling, and even home ownership, No plan can go into action without organization. From here on, we can go over a multitude of options and how to best pursue them, and Vetpage will help you stay on track with updates and notifications; Keeping you are your mentors in the know so that you never miss an appointment or an opportunity.</p>
-                <p><a class="btn btn-primary btn-lg" href="api/users/survey/ETS" role="button">Get Started &raquo;</a></p>
-            </div>
-        </div>
+                <h1>Sorting out housing</h1>
+                <p>One of the more daunting, but also the most important tasks for a transitioning service member is hashing out where to live and how to handle it. Moving is an expense and time consuming process, even as a servicemember...And arguably especially so, as you're coming into the civilian world likely unemployed. While you may still get a final check after your ETS, it's important to have a solid gameplan for income upon your arrival home, wherever that may be, and a realistic goal of where to live on that income.</p>
 
-        <div class="container">
-                <!-- Example row of columns -->
-                <div class="row">
-                  <div class="col-md-4">
-                    <h2>Choosing a school</h2>
-                    <p>Choosing a school is no easy task, but we've gathered resources that can help! Whether you're working with a mentor, or researching on your own, examine colleges and trade schools in your area that accept the 9/11 GI bill.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                  </div>
-                  <div class="col-md-4">
-                    <h2>Understand your benefits</h2>
-                    <p>From education to health, housing, and beyond; Here you can dive into the resources in place from federal and local institutions to benefit veterans!</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                  </div>
-                  <div class="col-md-4">
-                    <h2>Need help?</h2>
-                    <p>Have a question or in need of other support? Interested in pursuing an experienced mentor for help in quickly getting your plans set in motion? Check out our FAQ or community forum!</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                  </div>
-                </div>
-            
+                <p>Many landlords, especially in college towns, are often more willing to accept some wiggle room on your employment status if you are a veteran fresh from service if you have a clear path of income laid out, whether it be a job lined up, or using the living stipend from your 9/11 GI Bill</p>
+
+                <p>For those looking into attaining home ownership, especially service members retiring from the service instead of just ETS'ing, the VA and other organizations offer competitive loans and programs to make buying a home a more accessible process.</p>
+
+                <h4>Well known providors:</h4>
+                <br>
+                <a target="_blank" href="https://www.va.gov/housing-assistance/"><img src="/images/va logo.png"></a>
+                <br>
+                <a target="_blank" href="https://www.usaamortgageloans.com/"><img src="/images/USAA.png"></a>
                 <hr>
-            
-              </div>
+                <h5>Homeless hotline</h5>
+                <p>If you or someone you know is facing homelessness or is already in need, the VA has a <a href="https://www.va.gov/homeless/nationalcallcenter.asp">hotline</a> in service.</p>
+                <hr>
+                <form>
+                    <label for="homeStatus" class="sr-only">Living status</label>
+                    <input type="text" id="homeStatus" class="form-control" placeholder="homeStatus" value="Living Status" name="homeStatus">
+                    <br>
+                    <label for="employment" class="sr-only">Employment status</label>
+                    <input type="text" id="employment" class="form-control" placeholder="employment" value="Employment Status" name="employment">
+                    <br>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Update Checklist</button>
+                </form>
+            </div>
+
+
 
         <% include ../partials/footer %>
     </body>

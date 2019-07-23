@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
     <% include ../partials/head %>
+    <link href="/stylesheets/video.css" rel="stylesheet">
+    <script src="/javascripts/videos.js"></script>
     <body>
         <% include ../partials/nav %>
-        <div class="jumbotron">
-            <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+                <video autoplay muted loop id="indexVideo">    
+                        <source src="" data-src="/videos/stock4.mp4" type="video/mp4">
+                    </video>
+            <div class="container text-white">
                 <h1>Welcome to your checklist!</h1>
                 <p>Welcome to the beginning of your transitionary journey! Here we can go step by step with you to chart out a plan of attack towards reintegration. From ETS to schooling, and even home ownership, No plan can go into action without organization. From here on, we can go over a multitude of options and how to best pursue them, and Vetpage will help you stay on track with updates and notifications; Keeping you are your mentors in the know so that you never miss an appointment or an opportunity.</p>
 
                 <div class="row">
                     <div class="col">
-                        <p><a class="btn btn-primary btn-lg" href="api/users/survey/ets" role="button">ETS &raquo;</a></p>
+                        <p><a class="btn btn-primary btn-lg" href="/api/users/survey/ets" role="button">ETS &raquo;</a></p>
                     </div>
                     <div class="col">
-                            <p><a class="btn btn-primary btn-lg" href="api/users/survey/school" role="button">School &raquo;</a></p>
+                            <p><a class="btn btn-primary btn-lg" href="/api/users/survey/school" role="button">School &raquo;</a></p>
                     </div>
                     <div class="col">
-                            <p><a class="btn btn-primary btn-lg" href="api/users/survey/home" role="button">Home &raquo;</a></p>
+                            <p><a class="btn btn-primary btn-lg" href="/api/users/survey/housing" role="button">Housing &raquo;</a></p>
                     </div>
                     <div class="col">
-                            <p><a class="btn btn-primary btn-lg" href="api/users/survey/counseling" role="button">Counseling &raquo;</a></p>
+                            <p><a class="btn btn-primary btn-lg" href="/api/users/survey/counseling" role="button">Counseling &raquo;</a></p>
                     </div>
                 </div>
             </div>
