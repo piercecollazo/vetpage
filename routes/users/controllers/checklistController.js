@@ -38,12 +38,12 @@ module.exports = {
                     } else {
 
                         if(params.name)checklist.name = params.name
-                        if(params.ets.date)checklist.ets.date = params.ets.date
-                        if(params.school.name)checklist.school.name = params.school.name
-                        if(params.school.grants)checklist.school.grants = params.school.grants
+                        if(params.etsDate)checklist.ets.date = params.ets.date
+                        if(params.schoolName)checklist.school.name = params.school.name
+                        if(params.schoolGrants)checklist.school.grants = params.school.grants
                         if(params.school.benefits)checklist.school.benefits = params.school.benefits
-                        if(params.school.attendance)checklist.school.attendance = params.school.attendance
-                        if(params.housing)checklist.housing = params.housing
+                        if(params.schoolAttendane)checklist.school.attendance = params.school.attendance
+                        if(params.housingStatus)checklist.housing = params.housing
                         if(params.employment)checklist.employment = params.employment
                         
                         checklist.save((error) => {
@@ -61,5 +61,18 @@ module.exports = {
         })
         .catch(error => reject(error))
     })
+    },
+    getList: (id) => {
+        return new Promise((resolve, reject) => {
+            Checklist
+                .findOne({
+                    owner: id
+                })
+                .exec((error, list) => {
+                    if (error) reject(error)
+                    else       resolve(list)
+                })
+
+        })
     }
 }

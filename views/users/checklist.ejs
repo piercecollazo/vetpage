@@ -1,16 +1,44 @@
 <button class="collapsible">ETS</button>
 <div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <br>
+  <b>ETS Date:</b><span><%= list.ets.date %></span>
+  <hr>
+  <% if(list.ets.health.health == true){ %>
+    <b>Health checkout:</b><span>Completed</span>
+    <% } else { %>
+    <b>Health checkout:</b><span>Pending date</span>
+  <% } %>
+  <hr>
+  <% if(list.ets.health.dental == true){ %>
+    <b>Dental checkout:</b><span>Completed</span>
+    <% } else { %>
+    <b>Dental checkout:</b><span>Pending date</span>
+  <% } %>
+  <hr>
 </div>
 <button class="collapsible">School</button>
 <div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <br>
+  <b>School:</b><span> Digital Film Academy Code Immersives</span>
+  <hr>
+  <b>Scholarships/Grants:</b><span>None</span>
+  <hr>
+  <b>Benefits:</b><span>Post 9/11 GI Bill</span>
+  <hr>
+  <b>Date of attendance:</b><span>January 20th</span>
+  <hr>
 </div>
 <button class="collapsible">Home</button>
 <div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <br>
+  <b>Housing:</b><span><%= list.housing %></span>
+  <hr>
+  <b>Employment:</b><span><%= list.employment %></span>
+  <hr>
 </div>
 <button class="collapsible">Counseling</button>
 <div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <br>
+  <b>Counseling:</b><span>None</span>
+  <hr>
 </div>
